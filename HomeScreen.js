@@ -18,6 +18,18 @@ export default function HomeScreen() {
     { id: '8', fjicon: require('./assets/tictok.jpg'), fjtitle: 'Theory of Computation', fjsubTitle: 'TikTok', amount1: '$199.00', backgroundColor: '#c2185b', backgroundImage: require('./assets/Group.png'), location1: 'Accra, Ghana' },
   ];
 
+  const pJob = [
+    { id: '1', icon: require('./assets/job1.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Florida' },
+    { id: '2', icon: require('./assets/job2.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
+    { id: '3', icon: require('./assets/fb2.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
+    { id: '4', icon: require('./assets/apple.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
+    { id: '5', icon: require('./assets/apple.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
+    { id: '6', icon: require('./assets/apple.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
+    { id: '7', icon: require('./assets/apple.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
+    { id: '8', icon: require('./assets/apple.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
+    { id: '9', icon: require('./assets/apple.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
+    { id: '10', icon: require('./assets/apple.png'), title: 'Jr Executive', subTile: 'Burger King', amount: '$40.00', location: 'Los Angeles, US' },
+  ];
 
   return (
     <SafeAreaView style={styles.container}>
@@ -70,7 +82,21 @@ export default function HomeScreen() {
             <Text style={styles.jobs}>Popular Jobs</Text>
             <Text style={styles.seemore}>See all</Text>
         </View>  
-
+        
+        <FlatList
+          data={pJob}
+          renderItem={({ item }) => (
+            <PopularJobs
+              historyIcon={item.icon}
+              title={item.title}
+              subTile={item.subTile}
+              amount={item.amount}
+              location={item.location}
+            />
+          )}
+          keyExtractor={item => item.id}
+        />
+        
       </ScrollView>
     </SafeAreaView>
   );
