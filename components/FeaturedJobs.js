@@ -16,6 +16,10 @@ const FeaturedJobs = ({ fjicon, fjtitle, fjsubTitle, amount1, location1, backgro
           </View>
         </View>
 
+         <View style={styles.bottomRow}>
+          <Text style={styles.amount1}>{amount1}</Text>
+          <Text style={styles.location1}>{location1}</Text>
+        </View>
         
       </View>
     </View>
@@ -65,7 +69,23 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     letterSpacing: 0.5,
   },
-  
+  bottomRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    position: 'absolute',
+    bottom: 10,
+    left: 20,
+    right: 20,
+  },
+  amount1: {
+    color: '#fff',
+    fontSize: 16,
+    letterSpacing: 2,
+  },
+  location1: {
+    color: '#fff',
+    fontSize: 16,
+  },
 });
 
 export default FeaturedJobs;

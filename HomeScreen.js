@@ -1,9 +1,20 @@
-import { Text, View, SafeAreaView, ScrollView, Image, StyleSheet, TextInput } from 'react-native';
+import { Text, View, SafeAreaView, ScrollView, Image, StyleSheet, FlatList, TextInput } from 'react-native';
 import React, { useState } from 'react';
-
-
+import FeaturedJobs from './components/FeaturedJobs';
 export default function HomeScreen() {
   const [searchQuery, setSearchQuery] = useState('');
+
+
+  const fJobData = [
+    { id: '1', fjicon: require('./assets/fb2.png'), fjtitle: 'Software Engineering', fjsubTitle: 'Facebook', amount1: '$12.99', backgroundColor: '#5386E4', backgroundImage: require('./assets/Group.png'), location1: 'Accra, Ghana' },
+    { id: '2', fjicon: require('./assets/google.png'), fjtitle: 'Cybersecurity', fjsubTitle: 'Google', amount1: '$45.00', backgroundColor: '#04284A', backgroundImage: require('./assets/Group.png'), location1: 'Accra, Ghana' },
+    { id: '3', fjicon: require('./assets/Instagram.png'), fjtitle: 'Data Science ', fjsubTitle: 'Instagram', amount1: '$8.75', backgroundColor: '#00796b', backgroundImage: require('./assets/Group.png'), location1: 'Accra, Ghana' },
+    { id: '4', fjicon: require('./assets/whatsapp.jpg'), fjtitle: 'Artificial Intelligence (AI)', fjsubTitle: 'WhatsApp', amount1: '$149.99', backgroundColor: '#5d4037',backgroundImage: require('./assets/Group.png'), location1: 'Accra, Ghana'  },
+    { id: '5', fjicon: require('./assets/YouTube.png'), fjtitle: 'Mobile App', fjsubTitle: 'YouTube', amount1: '$23.50', backgroundColor: '#7b1fa2', backgroundImage: require('./assets/Group.png'), location1: 'Accra, Ghana' },
+    { id: '6', fjicon: require('./assets/Pinterest.png'), fjtitle: 'Computer Networks', fjsubTitle: 'Pinterest', amount1: '$59.99', backgroundColor: '#303f9f', backgroundImage: require('./assets/Group.png'), location1: 'Accra, Ghana' },
+    { id: '7', fjicon: require('./assets/snap.jpg'), fjtitle: 'Computer Graphics', fjsubTitle: 'Snapchat', amount1: '$5.20', backgroundColor: '#0288d1', backgroundImage: require('./assets/Group.png'), location1: 'Accra, Ghana' },
+    { id: '8', fjicon: require('./assets/tictok.jpg'), fjtitle: 'Theory of Computation', fjsubTitle: 'TikTok', amount1: '$199.00', backgroundColor: '#c2185b', backgroundImage: require('./assets/Group.png'), location1: 'Accra, Ghana' },
+  ];
 
 
   return (
@@ -34,6 +45,24 @@ export default function HomeScreen() {
           <Text style={styles.jobs}>Featured Jobs</Text>
           <Text style={styles.seemore}>See all</Text>
         </View>
+
+        <FlatList
+          data={fJobData}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item }) => (
+            <FeaturedJobs
+              fjicon={item.fjicon}
+              fjtitle={item.fjtitle}
+              fjsubTitle={item.fjsubTitle}
+              amount1={item.amount1}
+              location1={item.location1}
+              backgroundColor={item.backgroundColor}
+            />
+          )}
+          keyExtractor={item => item.id}
+        />
+
 
       </ScrollView>
     </SafeAreaView>
