@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
-const PopularJobs = ({ historyIcon,  }) => {
+const PopularJobs = ({ historyIcon, title, subTile, amount, location  }) => {
   return (
     <TouchableOpacity style={styles.container}>
       <View style={styles.imageContainer}>
