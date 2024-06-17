@@ -1,6 +1,8 @@
 import { Text, View, SafeAreaView, ScrollView, Image, StyleSheet, FlatList, TextInput } from 'react-native';
 import React, { useState } from 'react';
 import FeaturedJobs from './components/FeaturedJobs';
+import PopularJobs from './components/PopularJobs';
+
 export default function HomeScreen() {
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -63,6 +65,11 @@ export default function HomeScreen() {
           keyExtractor={item => item.id}
         />
 
+
+        <View style={styles.jobCat}>
+            <Text style={styles.jobs}>Popular Jobs</Text>
+            <Text style={styles.seemore}>See all</Text>
+        </View>  
 
       </ScrollView>
     </SafeAreaView>
