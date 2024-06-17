@@ -14,6 +14,26 @@ export default function LoginScreen({ navigation }) {
       <Text style={styles.user}>Jobizz</Text>
       <Text style={styles.greet}> Welcome Back👋</Text>
       <Text style={styles.subtitle}> Let’s log in. Apply to jobs!</Text>
+
+       <TextInput
+        style={styles.input}
+        placeholder="  Name"
+        value={name}
+        onChangeText={setName}
+        placeholderTextColor="#AFB0B6"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="  Email"
+        value={email}
+        onChangeText={setEmail}
+        placeholderTextColor="#AFB0B6"
+      />
+
+      <TouchableOpacity style={styles.btnContainer} onPress={handleSignUp}>
+        <Text  style={styles.login} >Log in</Text>
+      </TouchableOpacity>
+
     </View>
   );
 }
@@ -44,6 +64,30 @@ const styles = StyleSheet.create({
     marginBottom: 25,
     alignSelf: 'left',
     color: "#AFB0B6",
+  },
+  input: {
+    height: 50,
+    borderColor: '#AFB0B6',
+    borderWidth: 1,
+    marginBottom: 12,
+    paddingHorizontal: 8,
+    borderRadius: 7,
+    width: '100%',
+  },
+
+  btnContainer: {
+    height: 50,
+    width: '100%',
+    marginBottom: 20,
+    backgroundColor: '#356899',
+    borderRadius: 7,
+    alignItems: 'center',
+    paddingVertical: 15,
+  },
+  login: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 500,
   },
   
 });

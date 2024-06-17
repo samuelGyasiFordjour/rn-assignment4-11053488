@@ -29,6 +29,12 @@ export default function HomeScreen() {
           </View>
           <Image source={require('./assets/filter.png')} style={styles.filterImage} />
         </View>
+
+        <View style={styles.jobCat}>
+          <Text style={styles.jobs}>Featured Jobs</Text>
+          <Text style={styles.seemore}>See all</Text>
+        </View>
+
       </ScrollView>
     </SafeAreaView>
   );
@@ -106,5 +112,23 @@ const styles = StyleSheet.create({
     color: '#95969D',
     fontSize: 18,
   },
-  
+  jobCat: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 40,
+    margin: 10,
+    width: '100%',
+    paddingHorizontal: 20,
+  },
+  seemore: {
+    alignItems: 'center',
+    color: '#95969D',
+  },
+  jobs: {
+    color: '#0D0D26',
+    fontSize: 18,
+    fontWeight: '700',
+    
+  },
 });
