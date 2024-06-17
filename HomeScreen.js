@@ -1,9 +1,10 @@
-import { Text, View, SafeAreaView, ScrollView, Image, StyleSheet, FlatList, TextInput } from 'react-native';
+import { Text, View, SafeAreaView, ScrollView, Image, StyleSheet, TouchableOpacity, FlatList, TextInput } from 'react-native';
 import React, { useState } from 'react';
 import FeaturedJobs from './components/FeaturedJobs';
 import PopularJobs from './components/PopularJobs';
 
-export default function HomeScreen() {
+export default function HomeScreen({ route }) {
+  const { userName, userEmail } = route.params;
   const [searchQuery, setSearchQuery] = useState('');
 
 
@@ -19,16 +20,16 @@ export default function HomeScreen() {
   ];
 
   const pJob = [
-    { id: '1', icon: require('./assets/job1.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Florida' },
-    { id: '2', icon: require('./assets/job2.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
-    { id: '3', icon: require('./assets/fb2.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
-    { id: '4', icon: require('./assets/apple.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
-    { id: '5', icon: require('./assets/apple.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
-    { id: '6', icon: require('./assets/apple.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
-    { id: '7', icon: require('./assets/apple.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
-    { id: '8', icon: require('./assets/apple.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
-    { id: '9', icon: require('./assets/apple.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$40.00', location: 'Los Angeles, US' },
-    { id: '10', icon: require('./assets/apple.png'), title: 'Jr Executive', subTile: 'Burger King', amount: '$40.00', location: 'Los Angeles, US' },
+    { id: '1', icon: require('./assets/job1.png'), title: 'Jr Executive', subTile: 'Burger King',  amount: '$125.99', location: 'Florida' },
+    { id: '2', icon: require('./assets/job2.png'), title: 'Analyst', subTile: 'Auditor',  amount: '$150.00', location: 'Los Angeles, US' },
+    { id: '3', icon: require('./assets/fb2.png'), title: 'Manager', subTile: 'Broker',  amount: '$199.99', location: 'New York, US' },
+    { id: '4', icon: require('./assets/google.png'), title: 'Engineer', subTile: 'Editor',  amount: '$225.50', location: 'Chicago, US' },
+    { id: '5', icon: require('./assets/job1.png'), title: 'Designer', subTile: 'Marketer',  amount: '$300.00', location: 'Houston, US' },
+    { id: '6', icon: require('./assets/job2.png'), title: 'Developer', subTile: 'Planner',  amount: '$450.75', location: 'Miami, US' },
+    { id: '7', icon: require('./assets/fb2.png'), title: 'Consultant', subTile: 'Recruiter',  amount: '$500.00', location: 'Seattle, US' },
+    { id: '8', icon: require('./assets/google.png'), title: 'Director', subTile: 'Scientist',  amount: '$625.99', location: 'Boston, US' },
+    { id: '9', icon: require('./assets/whatsapp.jpg'), title: 'Advisor', subTile: 'Trainer',  amount: '$750.00', location: 'Denver, US' },
+    { id: '10', icon: require('./assets/tictok.jpg'), title: 'Technician', subTile: 'Writer', amount: '$899.99', location: 'San Francisco, US' },
   ];
 
   return (
@@ -36,10 +37,12 @@ export default function HomeScreen() {
       <ScrollView>
         <View style={styles.header}>
           <View>
-          <Text style={styles.title}>Eric Atsu</Text>
-          <Text style={styles.email}>eric@gmail.com</Text>
+          <Text style={styles.title}>{userName}</Text>
+          <Text style={styles.email}>{userEmail}</Text>
           </View>
+          <TouchableOpacity>
           <Image source={require("./assets/profile.png")} style={styles.profileImage} />
+          </TouchableOpacity>
         </View>
 
         <View style={styles.searchContainer}>
@@ -96,7 +99,7 @@ export default function HomeScreen() {
           )}
           keyExtractor={item => item.id}
         />
-        
+
       </ScrollView>
     </SafeAreaView>
   );
@@ -106,7 +109,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     backgroundColor: '#FAFAFD',
-    paddingTop: 20,
+    paddingTop: 40,
     
   },
   header: {

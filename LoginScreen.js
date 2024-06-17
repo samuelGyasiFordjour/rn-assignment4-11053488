@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput,  StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 export default function LoginScreen({ navigation }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
   const handleSignUp = () => {
-    navigation.navigate('Home');
+    navigation.navigate('Home', { userName: name, userEmail: email });
   };
 
   return (
