@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 10,
-    marginBottom: 25,
+    marginBottom: 60,
     alignSelf: 'left',
     color: "#AFB0B6",
   },
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderColor: '#AFB0B6',
     borderWidth: 1,
-    marginBottom: 12,
+    marginBottom: 10,
     paddingHorizontal: 8,
     borderRadius: 7,
     width: '100%',
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   otherWays: {
-    marginTop: 80,
+    marginTop: 50,
     width: 270,
   },
   icons: {
