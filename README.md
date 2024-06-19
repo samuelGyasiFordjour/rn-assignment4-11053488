@@ -1,63 +1,71 @@
-# Task Management App
+# Job Finder App
 
-This is a React Native application designed to manage and track tasks across various categories. The app features horizontal scrolling for categories and vertical scrolling for tasks, leveraging core components such as View, Text, ScrollView, TextInput, StyleSheet, Button, FlatList, and Image.
+## Overview
+The Job Finder App is a simple and efficient application designed to help users find popular and featured jobs. It includes a login screen that passes user details to the home screen, where the details are displayed. The app features custom components for job cards, which are displayed in both popular and featured job sections.
 
+## Components
+-Featured job
+-Popular job
 
-## Components and Usage
+### Login Screen
+- **Description**: The login screen is the entry point of the application where users input their name and email.
+- **Usage**: Users enter their name and email, then press the login button. Upon pressing login, the user is navigated to the home screen, and their details are passed along.
 
-### Core Components
-
-1. **View**
-   - The View component serves as a container for other components, allowing for layout and styling.
-   - Used extensively throughout the app to structure the layout.
-
-2. **Text**
-   - The Text component displays text.
-   - Used for category names, task descriptions, and other textual information.
-
-3. **ScrollView**
-   - The ScrollView component provides a scrollable container for content that may not fit on the screen.
-   - Used for horizontal scrolling of categories.
-
-4. **TextInput**
-   - The TextInput component allows for user input.
-   - Used for adding new tasks or updating existing ones.
-
-5. **StyleSheet**
-   - The StyleSheet component enables defining styles in a structured manner.
-   - Used to style all components to match the provided UI design.
-
-6. **Button**
-   - The Button component allows user interaction to trigger actions.
-   - Used for adding tasks, submitting forms, and other interactive elements.
-
-7. **FlatList**
-   - The FlatList component efficiently renders large lists of data.
-   - Used for vertical scrolling of tasks.
-
-8. **Image**
-   - The Image component displays images.
-   - Used for icons and decorative images within the app.
-
-
-### Custom Components
-
-1. **CategoryItem**
-   - A custom component for rendering individual categories.
-   - Displays category name and associated icon.
-
-2. **TaskItem**
-   - A custom component for rendering individual tasks.
-   - Displays task description, status, and action buttons.
-
-## Screenshots
+- **Screenshot**:  
+  ![Login Screen](./assets/1.jpg)
+  ![Login Screen](./assets/2.jpg)  
+  
 
 ### Home Screen
-![Home Screen](./assets/Home.jpg)
+- **Description**: The home screen displays the user's name and email and showcases the popular and featured job cards.
+- **Usage**: After logging in, users are taken to the home screen where they can see their details at the top and browse through the job cards.
 
-### Category List
-![Category List](./assets/Categories.jpg)
+- **Screenshot**:  
+  ![Home Screen](./assets/3.jpg)  
+  
+### Job Card Component
+- **Props**:
+  - `title`: The title of the job.
+  - `company`: The company offering the job.
+  - `location`: The job location.
+  - `salary`: The salary range for the job.
 
-### Task List
-![Task List](./assets/Ongoing_Task.jpg)
+### Featured Jobs Section
+- **Description**: Displays 8 different job cards of featured jobs.
+- **Usage**: Utilizes the Job Card Component to display job details.
 
+- **Screenshot**:  
+  ![Job Card Component](./assets/4.jpg)
+  ![Job Card Component](./assets/5.jpg)
+  ![Job Card Component](./assets/6.jpg)
+
+### Popular Jobs Section
+- **Description**: Displays 8 different job cards of popular jobs.
+- **Usage**: Utilizes the Job Card Component to display job details.
+
+- **Screenshot**:  
+  ![Job Card Component](./assets/7.jpg)
+  ![Job Card Component](./assets/8.jpg)
+
+## Custom Components
+Custom components are used throughout the application to maintain a consistent design and enhance reusability. Each job card is created using the custom Job Card Component, ensuring uniformity across the popular and featured job sections.
+
+## Installation and Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/samuelGyasiFordjour/rn-assignment4-11053488.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd rn-assignment4-11053488
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the application:
+   ```bash
+   npm start
+   ```
+
+# Student ID: 11053488
